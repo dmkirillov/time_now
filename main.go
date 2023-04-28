@@ -14,7 +14,16 @@ func main() {
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"time": time.Now().UnixNano(),
+			"UTC":time.Now().UTC(),
 		})
+	})
+	r.GET("/ping",func (c *gin.Context{
+		c.JSON(http.StatusOK,gin.H{
+			"message":"pong",
+		})
+	})
+	r.GET("/health",func (c *gin.Context{
+		c.String(http.StatusOK,"OK.")
 	})
 	err := r.Run()
 	if err != nil {
