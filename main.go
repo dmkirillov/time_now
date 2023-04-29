@@ -16,6 +16,7 @@ func main() {
 			"time":  time.Now().UnixNano(),
 			"UTC":   time.Now().UTC(),
 			"UTC+3": time.Now().UTC().Add(time.Hour * 3),
+			"UTC+6": time.Now().UTC().Add(time.Hour * 6),
 		})
 	})
 	r.GET("/ping", func(c *gin.Context) {
