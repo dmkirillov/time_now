@@ -13,8 +13,9 @@ func main() {
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"time": time.Now().UnixNano(),
-			"UTC":  time.Now().UTC(),
+			"time":  time.Now().UnixNano(),
+			"UTC":   time.Now().UTC(),
+			"UTC+3": time.Now().UTC().Add(time.Hour * 3),
 		})
 	})
 	r.GET("/ping", func(c *gin.Context) {
